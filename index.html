@@ -12,36 +12,32 @@
             --light-bg: #f8f9fa;
         }
 
-        body { background-color: var(--light-bg); }
+        body { background-color: var(--light-bg); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-
+        /* Navbar Styling */
         .navbar-custom { background-color: var(--main-blue); padding: 1rem 0; }
         
+        /* Standard Hover Dropdown for Desktop */
         @media (min-width: 992px) {
-            .mega-dropdown { width: 800px; padding: 0; overflow: hidden; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-            .dropdown:hover .mega-dropdown { display: block; }
+            .dropdown:hover .dropdown-menu { display: block; margin-top: 0; }
         }
 
-        .col-blue-dark { background-color: #002244; color: white; }
-        .col-blue-mid { background-color: #004080; color: white; }
-        .col-blue-light { background-color: #0059b3; color: white; }
-        .mega-col { padding: 30px; min-height: 250px; }
-        .mega-col .dropdown-item { color: rgba(255,255,255,0.8); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .mega-col .dropdown-item:hover { color: #fff; background: transparent; padding-left: 5px; transition: 0.3s; }
+        .dropdown-menu { border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; }
+        .dropdown-item:hover { background-color: var(--accent-blue); color: white; }
 
-     
+        /* Banner Styling */
         .hero-banner {
             background: linear-gradient(rgba(0, 34, 68, 0.8), rgba(0, 34, 68, 0.7)), 
                         url('https://images.unsplash.com/photo-1523050853063-bd388f9f79b5?auto=format&fit=crop&w=1350&q=80');
             background-size: cover; background-position: center; min-height: 450px; color: white; display: flex; align-items: center;
         }
 
-    
+        /* Feature Cards */
         .feature-icon { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1rem; }
         .stats-card { border: none; border-bottom: 4px solid var(--accent-blue); transition: transform 0.3s; }
         .stats-card:hover { transform: translateY(-10px); }
 
-       
+        /* Form Styling */
         .form-section-title { font-size: 0.85rem; font-weight: 700; color: var(--main-blue); text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 10px; border-left: 4px solid var(--accent-blue); padding-left: 10px; }
     </style>
 </head>
@@ -57,31 +53,20 @@
                 <ul class="navbar-nav ms-auto text-uppercase small fw-bold">
                     <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Admission</a></li>
+                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="acadDrop" data-bs-toggle="dropdown">Academics</a>
-                        <div class="dropdown-menu mega-dropdown">
-                            <div class="row g-0">
-                                <div class="col-lg-4 mega-col col-blue-dark">
-                                    <h6 class="fw-bold mb-3">ENGINEERING</h6>
-                                    <a class="dropdown-item" href="#">Computer Science</a>
-                                    <a class="dropdown-item" href="#">Mechanical Eng.</a>
-                                    <a class="dropdown-item" href="#">Data Science</a>
-                                </div>
-                                <div class="col-lg-4 mega-col col-blue-mid">
-                                    <h6 class="fw-bold mb-3">BUSINESS</h6>
-                                    <a class="dropdown-item" href="#">BBA / MBA</a>
-                                    <a class="dropdown-item" href="#">Digital Marketing</a>
-                                    <a class="dropdown-item" href="#">Logistics</a>
-                                </div>
-                                <div class="col-lg-4 mega-col col-blue-light">
-                                    <h6 class="fw-bold mb-3">RESOURCES</h6>
-                                    <a class="dropdown-item" href="#">Digital Library</a>
-                                    <a class="dropdown-item" href="#">Research Lab</a>
-                                    <a class="dropdown-item" href="#">Online Portal</a>
-                                </div>
-                            </div>
-                        </div>
+                        <a class="nav-link dropdown-toggle" href="#" id="acadDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="acadDrop">
+                            <li><a class="dropdown-item" href="#">Engineering</a></li>
+                            <li><a class="dropdown-item" href="#">Medical Science</a></li>
+                            <li><a class="dropdown-item" href="#">Business Management</a></li>
+                            <li><a class="dropdown-item" href="#">Arts & Humanities</a></li>
+                            <li><a class="dropdown-item" href="#">Applied Research</a></li>
+                        </ul>
                     </li>
+
                     <li class="nav-item"><a class="nav-link" href="#">Contractors</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
                 </ul>
@@ -138,7 +123,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="card border-0 shadow-lg">
+                    <div class="card border-0 shadow-lg overflow-hidden">
                         <div class="row g-0">
                             <div class="col-lg-4 bg-primary p-5 text-white d-none d-lg-flex flex-column justify-content-center">
                                 <h3 class="fw-bold">Need Help?</h3>
@@ -175,9 +160,10 @@
                                         <div class="col-md-12">
                                             <select class="form-select" title="Select Course" aria-label="Course">
                                                 <option selected disabled>Select Course of Interest</option>
-                                                <option>B.Tech Computer Science</option>
-                                                <option>MBA Marketing</option>
-                                                <option>B.Sc Data Analytics</option>
+                                                <option>Engineering</option>
+                                                <option>Medical Science</option>
+                                                <option>Business Management</option>
+                                                <option>Arts & Humanities</option>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
@@ -203,7 +189,7 @@
         </div>
     </section>
 
-    <footer class="navbar-custom text-white py-4 mt-5">
+    <footer class="navbar-custom text-white py-4">
         <div class="container text-center">
             <p class="mb-0">&copy; 2026 Global Institute of Excellence. All Rights Reserved.</p>
         </div>
