@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details | Blue Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --main-blue: #003366;
+            --accent-blue: #007bff;
+            --light-bg: #f8f9fa;
+        }
+
+        body { background-color: var(--light-bg); font-family: 'Segoe UI', sans-serif; }
+        .navbar-custom { background-color: var(--main-blue); padding: 1rem 0; }
+
+        /* Course Selector Bar */
+        .course-selector-bar {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .course-opt-btn {
+            border: 1px solid #dee2e6;
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--main-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .course-opt-btn:hover, .course-opt-btn.active {
+            background-color: var(--main-blue);
+            color: white;
+            border-color: var(--main-blue);
+        }
+
+        .course-header {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), 
+                        url('img/course-header.jpg');
+            background-size: cover;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .sidebar-card { border: none; border-radius: 12px; position: sticky; top: 100px; }
+        .curriculum-item { border-left: 3px solid var(--accent-blue); padding-left: 15px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">Blue<span>Academy</span></a>
+        </div>
+    </nav>
+
+    <header class="course-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Academic Programs</h1>
+            <p class="lead">Explore our world-class courses designed for your future.</p>
+        </div>
+    </header>
+
+    <div class="course-selector-bar">
+        <div class="container">
+            <div class="d-flex gap-3 overflow-auto pb-2 justify-content-md-center">
+                <a href="#" class="course-opt-btn active">Mechanical Engineering</a>
+                <a href="#" class="course-opt-btn">Computer Science</a>
+                <a href="#" class="course-opt-btn">Business Management</a>
+                <a href="#" class="course-opt-btn">Medical Science</a>
+                <a href="#" class="course-opt-btn">Arts & Humanities</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="flex-shrink-0 bg-primary p-3 rounded text-white">
+                        <h2 class="mb-0">B.Tech</h2>
+                    </div>
+                    <div class="ms-3">
+                        <h2 class="fw-bold mb-0">Mechanical Engineering</h2>
+                        <span class="badge bg-success">Accredited Program</span>
+                    </div>
+                </div>
+
+                <section id="details">
+                    <h3 class="fw-bold border-bottom pb-2">Program Overview</h3>
+                    <p class="text-muted">Mechanical engineering is one of the broadest and oldest branches of engineering. Our curriculum blends theoretical knowledge with practical application in robotics, thermodynamics, and structural analysis.</p>
+                    
+                    <div class="row mt-4 mb-5">
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 bg-white shadow-sm rounded border-start border-primary border-4">
+                                <h6><strong>Duration</strong></h6>
+                                <p class="mb-0 text-muted">4 Years (8 Semesters)</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 bg-white shadow-sm rounded border-start border-primary border-4">
+                                <h6><strong>Eligibility</strong></h6>
+                                <p class="mb-0 text-muted">10+2 with Physics, Chem, Math</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="fw-bold border-bottom pb-2 mb-4">Core Curriculum</h3>
+                    <div class="curriculum-item">
+                        <h5 class="fw-bold text-primary">Solid Mechanics</h5>
+                        <p class="small text-muted">Study of the behavior of solid materials, especially their motion and deformation under the action of forces.</p>
+                    </div>
+                    <div class="curriculum-item">
+                        <h5 class="fw-bold text-primary">Fluid Dynamics</h5>
+                        <p class="small text-muted">The subdiscipline of fluid mechanics that describes the flow of fluids—liquids and gases.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card sidebar-card shadow-lg p-4 border-top border-primary border-5">
+                    <h5 class="fw-bold text-center">Ready to Start?</h5>
+                    <p class="text-center text-muted small">Apply now for the upcoming academic session.</p>
+                    <hr>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Admission Fee:</span>
+                            <span class="fw-bold">$500</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Available Seats:</span>
+                            <span class="text-danger fw-bold">12 Left</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg w-100 mb-3 shadow">Apply Online</button>
+                    <button class="btn btn-outline-dark w-100">Contact Counselor</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="navbar-custom text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Global Institute of Excellence. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
