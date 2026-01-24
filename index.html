@@ -26,11 +26,42 @@
         .dropdown-item:hover { background-color: var(--accent-blue); color: white; }
 
         
+        .hero-section { height: 100vh; position: relative; }
         .hero-banner {
-            background: linear-gradient(rgba(0, 34, 68, 0.8), rgba(0, 34, 68, 0.7)),
-                        url('https://images.unsplash.com/photo-1523050853063-bd388f9f79b5?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center; min-height: 450px; color: white; display: flex; align-items: center;
+            height: 100vh;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            display: flex;
+            align-items: center;
+            position: relative;
         }
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, var(--dark-overlay), transparent);
+        }
+        .hero-content { position: relative; z-index: 5; color: white; }
+        .gallery-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            background: #eee;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 300px;      /* Fixed Height */
+            object-fit: cover;  /* Prevents distortion */
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .gallery-wrapper:hover .gallery-img {
+            transform: scale(1.15);
+        }
+
 
         
         .feature-icon { font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1rem; }
@@ -150,36 +181,6 @@
 
 </div>
 </div>
-    </section>
-
-    <section class="container my-5 py-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-dark">Why Choose Our Institution?</h2>
-            <p class="text-muted">Ranked #1 for Innovation and Campus Placements</p>
-        </div>
-        <div class="row g-4 text-center">
-            <div class="col-md-4">
-                <div class="card h-100 p-4 stats-card shadow-sm">
-                    <div class="feature-icon">🎓</div>
-                    <h4 class="fw-bold">Expert Faculty</h4>
-                    <p class="text-muted">Learn from over 200+ industry experts and PhD scholars dedicated to student success.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-4 stats-card shadow-sm">
-                    <div class="feature-icon">🌍</div>
-                    <h4 class="fw-bold">Global Reach</h4>
-                    <p class="text-muted">International exchange programs with top universities in UK, USA, and Australia.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-4 stats-card shadow-sm">
-                    <div class="feature-icon">💼</div>
-                    <h4 class="fw-bold">95% Placements</h4>
-                    <p class="text-muted">Dedicated placement cell with partnerships including Fortune 500 companies.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="container my-5 py-5">
