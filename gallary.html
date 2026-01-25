@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Blue Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --main-blue: #003366;
+            --accent-blue: #007bff;
+            --accent-gold: #ffb703;
+            --button-orange: #fb8500;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+        }
+
+        
+        .navbar-custom { background-color: var(--main-blue); padding: 1rem 0; }
+        .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; }
+        .nav-link:hover { color: #fff !important; }
+        
+        @media (min-width: 992px) {
+            .dropdown:hover .dropdown-menu { display: block; margin-top: 0; }
+        }
+        .dropdown-menu { border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; }
+
+        
+        .hero-title-section {
+            background: linear-gradient(rgba(0, 18, 51, 0.75), rgba(0, 18, 51, 0.75)), 
+                        url('https://images.unsplash.com/photo-1523050853063-bd388f9f79b5?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-title-section h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        
+        .gallery-intro {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .gallery-intro span {
+            color: var(--button-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+        }
+        .gallery-intro h2 {
+            color: var(--main-blue);
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+
+        
+        .gallery-img-container {
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .gallery-img-container:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        
+        .cta-footer {
+            background: linear-gradient(rgba(0, 18, 51, 0.85), rgba(0, 18, 51, 0.85)), 
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            margin-top: 100px;
+            color: white;
+            text-align: center;
+        }
+        .cta-footer span { color: var(--accent-gold); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .cta-footer h2 { font-size: 3rem; font-weight: 800; margin: 15px 0; }
+        .cta-footer p { max-width: 700px; margin: 0 auto 30px; opacity: 0.9; font-size: 1.1rem; }
+        
+        .btn-apply {
+            background-color: var(--button-orange);
+            color: white;
+            padding: 15px 40px;
+            font-weight: 700;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-apply:hover { background-color: #e36414; color: white; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">Blue<span>Academy</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" title="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase small fw-bold">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="acadDrop" role="button" data-bs-toggle="dropdown">
+                            Academics
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="#">Engineering</a></li>
+                            <li><a class="dropdown-item" href="#">Medical Science</a></li>
+                            <li><a class="dropdown-item" href="#">Business Management</a></li>
+                            <li><a class="dropdown-item" href="#">Arts & Humanities</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-title-section">
+        <div class="container text-center">
+            <h1>Photo Gallery</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="gallery-intro">
+            <span>Campus Life</span>
+            <h2>Great Moments Of Campus Life</h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg1.jpeg" class="gallery-img" alt="Campus life photo 1">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg2.jpeg" class="gallery-img" alt="Campus life photo 2">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg3.jpeg" class="gallery-img" alt="Campus life photo 3">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg4.jpeg" class="gallery-img" alt="Campus life photo 4">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg5.jpeg" class="gallery-img" alt="Campus life photo 5">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg6.jpeg" class="gallery-img" alt="Campus life photo 6">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg7.jpeg" class="gallery-img" alt="Campus life photo 7">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg8.jpeg" class="gallery-img" alt="Campus life photo 8">
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="gallery-img-container shadow-sm">
+                    <img src="galimg9.jpeg" class="gallery-img" alt="Campus life photo 9">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="cta-footer">
+        <div class="container text-center">
+            <span>Admission Going On Spring Session 2026</span>
+            <h2>Apply For Admission</h2>
+            <p>Ready to join the leaders of tomorrow? Our admission process is now open for the spring session. Experience world-class education and a vibrant campus life.</p>
+            <a href="#" class="btn-apply">Apply Now &rarr;</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
